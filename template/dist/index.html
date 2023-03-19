@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime with a-frame</title>
+    
+    
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-environment-component@1.3.2/dist/aframe-environment-component.min.js"></script> -->
+    <!-- <script src="/src/pkg/aframe.js"></script> -->
+    <!-- <script type="module" src="./src/pkg/aframe_inspect.js" data-name="aframe-inspector"></script> -->
+    
+    
+    
+  <script type="module" crossorigin src="/vr-animation/assets/index-0bd65e54.js"></script>
+  <link rel="stylesheet" href="/vr-animation/assets/index-d9fa3076.css">
+</head>
+
+<body>
+    <!-- environment="preset:tron;seed:2;" -->
+    <a-scene intro-audio renderer="antialias: true" stats color="grey">
+        <a-asset>
+            <audio id="room" src="./src/sounds/music/_small.mp3" preload="auto"></audio>
+            <audio id="intro" src="./src/sounds/audio/intro.mp3" preload="auto"></audio>
+            <!-- <a-img id="road" src="./src/img/albedo.jpg"></a-img> -->
+            <!-- <a-img id="sky" src="./src/img/sky.jpeg"></a-img> -->
+            <a-asset-item id="ship_glb" src="./src/gltf/orion.glb"></a-asset-item>
+        </a-asset>
+        <a-box sound="src: #room;autoplay: true;volume:0.5" position="0 2 -3" color="white" scale="8 4 8" material="side:back;"></a-box>
+        <a-gltf-model id="orion" sound="src: #intro;" src="#ship_glb" position="0 1.5 -4" scale="1 1 1"></a-gltf-model>
+        <a-entity id="rig">
+            <a-camera></a-camera>
+            <a-entity id="left" oculus-touch-controls="hand: left"></a-entity>
+            <a-entity id="right" move oculus-touch-controls="hand: right"></a-entity>
+        </a-entity>
+
+        <a-entity light="type: ambient; color: #57b8f4; intensity: 0.1" visible=""></a-entity>
+        <a-entity light="type: point; color: #57b8f4; intensity: 0.23" position="0 2 -1.9"></a-entity>
+
+    </a-scene>
+</body>
+
+</html>
