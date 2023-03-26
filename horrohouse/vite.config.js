@@ -9,7 +9,6 @@ export default defineConfig((command, mode) => {
   } else {
     return {
       base: '/three/',
-      assetsInclude: ['**/*.glb'],
       plugins: [
         viteStaticCopy({
           targets: [
@@ -20,7 +19,7 @@ export default defineConfig((command, mode) => {
             {
               src: 'src/sounds/*',
               dest: 'src/sounds'
-            },
+            }
           ]
         })
       ]

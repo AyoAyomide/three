@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "aframe": "^1.4.1",
+    "brain.js": "^2.0.0-beta.18",
     "dat.gui": "^0.7.9",
     "three": "^0.150.1",
     "vite": "^4.1.4",
